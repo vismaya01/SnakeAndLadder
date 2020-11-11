@@ -10,7 +10,10 @@ public class SnakeAndLadder {
 			switch (rollDie) {
 				case 0:
  		   			playerPosition = playerPosition + playerRollDie;
- 					break;
+ 					if (playerPosition > 100){
+ 		   				playerPosition=playerPosition-playerRollDie;
+ 		   			}
+					break;
  				case 1:
  					playerPosition = playerPosition - playerRollDie;
 					if (playerPosition <= 0 ) {
@@ -24,7 +27,7 @@ public class SnakeAndLadder {
  					break;
  		 		}
 		}
-		if (playerPosition >= 100) {
+		if (playerPosition == 100) {
 			System.out.println("you won the game");
  			System.exit(0);
  		}
